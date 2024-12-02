@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            // Check if the device is Android or iPhone
+            var isAndroid = /Android/i.test(navigator.userAgent);
+            var isIphone = /iPhone/i.test(navigator.userAgent);
+
+            // Redirect if not Android or iPhone
+            if (!isAndroid && !isIphone) {
+                window.location.href = "/404"; // Redirect to a different page or website
+            }
+        </script>
+    </head>
+
+    <body>
+        <video height="500" controls autoplay id="video">
+        <source src="{{url_for( 'static', filename='video.mp4' )}}" type="video/mp4">
+    </video>
+        <script>
+            // Get the video element
+            var video = document.getElementById('video');
+            // Autoplay the video when the page loads 
+            video.play();
+            // Pause the video when the tab is not in focus 
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    video.pause();
+                } else {
+                    video.play();
+                }
+            });
+        </script>
+    </body>
+
+    </html>
+
+</head>
+
+<body>
+    <video height="500" controls autoplay id="video">
+        <source src=" {{url_for( 'static', filename='video.mp4' )}} " type="video/mp4">
+    </video>
+    <script>
+        // Get the video element
+        var video = document.getElementById('video');
+        // Autoplay the video when the page loads 
+        video.play(); // Pause the video when the tab is not in focus 
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                video.pause();
+            } else {
+                video.play();
+            }
+        });
+    </script>
+</body>
+
+</html>
